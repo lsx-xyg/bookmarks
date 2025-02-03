@@ -1,0 +1,52 @@
+[
+  {
+    "platform": "GitHub",
+    "url": "https://github.com/"
+  },
+  {
+    "platform": "Gitee",
+    "url": "https://gitee.com/"
+  },
+  {
+    "platform": "GitLab",
+    "url": "https://gitlab.com/"
+  },
+  {
+    "platform": "AcGit",
+    "url": "https://git.acwing.com/"
+  },
+
+  {
+    "platform": "Cloudflare",
+    "url": "https://www.cloudflare.com/"
+  },
+  {
+    "platform": "Vercel",
+    "url": "https://vercel.com/"
+  },
+  {
+    "platform": "Bilibili",
+    "url": "https://www.bilibili.com/"
+  },
+  {
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/"
+  },
+  {
+    "platform": "通义千问",
+    "url": "https://tongyi.aliyun.com/",
+    "icon": "https://img.alicdn.com/imgextra/i1/O1CN01asLYeX1WhbsyEZn5u_!!6000000002820-55-tps-56-56.svg"
+  },
+  {
+    "platform": "DeepSeek",
+    "url": "https://www.deepseek.com/"
+  },
+  {
+    "platform": "AcWing",
+    "url": "https://www.acwing.com/"
+  },
+  {
+    "platform": "Bootstrap",
+    "url": "https://getbootstrap.com/"
+  }
+]
