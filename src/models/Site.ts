@@ -1,6 +1,6 @@
 interface Site {
   platform: string;
-  url: URL;
+  url: string;
   icon?: string;
 }
 

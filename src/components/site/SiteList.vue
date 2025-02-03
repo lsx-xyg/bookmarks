@@ -18,7 +18,7 @@ onMounted(() => {
   Object.assign(siteList, data);
 });
 
-const handleClick = (url: URL) => {
+const handleClick = (url: string) => {
   window.open(url, '_blank'); // 在新标签页打开链接
 };
 </script>
