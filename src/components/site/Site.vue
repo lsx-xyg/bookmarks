@@ -1,5 +1,5 @@
 <template>
-  <div class="site-container" @click="onClick">
+  <div class="site-container" @click="onClick" @mouseenter="onMouseEnter">
     <div class="site-icon">
       <img
         :src="iconSrc"
@@ -23,7 +23,7 @@ interface Props {
 }
 
 const props = defineProps<Props>();
-const emit = defineEmits(['click']);
+const emit = defineEmits(['click', 'mouseenter']);
 
 // 计算初始的 iconSrc
 const iconSrc = computed(() => props.site.url + 'favicon.ico');
@@ -40,6 +40,10 @@ const handleImageError = () => {
 
 const onClick = () => {
   emit('click', props.site.url);
+};
+
+const onMouseEnter = () => {
+  emit('mouseenter');
 };
 </script>
 

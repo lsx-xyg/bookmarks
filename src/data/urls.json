@@ -1,7 +1,8 @@
 [
   {
     "platform": "GitHub",
-    "url": "https://github.com/"
+    "url": "https://github.com/",
+    "icon": "https://img.icons8.com/?size=100&id=4Z2nCrz5iPY2&format=png&color=000000"
   },
   {
     "platform": "Gitee",
@@ -13,7 +14,8 @@
   },
   {
     "platform": "AcGit",
-    "url": "https://git.acwing.com/"
+    "url": "https://git.acwing.com/",
+    "icon": "https://github.githubassets.com/assets/mona-loading-default-c3c7aad1282f.gif"
   },
 
   {
@@ -23,7 +25,8 @@
   },
   {
     "platform": "Vercel",
-    "url": "https://vercel.com/"
+    "url": "https://vercel.com/",
+    "icon": "https://assets.vercel.com/image/upload/front/favicon/vercel/favicon.ico"
   },
   {
     "platform": "Bilibili",
@@ -31,7 +34,8 @@
   },
   {
     "platform": "YouTube",
-    "url": "https://www.youtube.com/"
+    "url": "https://www.youtube.com/",
+    "icon": "https://www.gstatic.com/youtube/img/icons/web/youtube_fill/youtube_kids_round_updated/v1/24px.svg"
   },
   {
     "platform": "通义千问",
@@ -49,5 +53,25 @@
   {
     "platform": "Bootstrap",
     "url": "https://getbootstrap.com/"
+  },
+  {
+    "platform": "LinuxDo",
+    "url": "https://linux.do/",
+    "icon": "https://linux.do/uploads/default/optimized/3X/9/d/9dd49731091ce8656e94433a26a3ef36062b3994_2_32x32.png"
+  },
+  {
+    "platform": "AntDesign",
+    "url": "https://ant.design/",
+    "icon": "https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
+  },
+  {
+    "platform": "ElementPlus",
+    "url": "https://element-plus.org/",
+    "icon": "https://element-plus.org/images/element-plus-logo-small.svg"
+  },
+  {
+    "platform": "VueAntDesign",
+    "url": "https://www.antdv.com/",
+    "icon": "https://next.antdv.com/assets/logo.1ef800a8.svg"
   }
 ]

@@ -1,7 +1,11 @@
 <template>
   <div class="site-list-container">
     <div v-for="(site, index) in siteList" :key="index" class="site-item">
-      <Site :site="site" @click="handleClick(site.url)" />
+      <Site
+        :site="site"
+        @click="handleClick(site.url)"
+        @mouseenter="handleMouseEnter"
+      />
     </div>
   </div>
 </template>
@@ -18,8 +22,17 @@ onMounted(() => {
   Object.assign(siteList, data);
 });
 
+// @ts-ignore
+const myAudio = new Audio(
+  new URL('../../data/audio/a.mp3', import.meta.url).href
+);
+
 const handleClick = (url: string) => {
   window.open(url, '_blank'); // 在新标签页打开链接
+};
+
+const handleMouseEnter = () => {
+  // myAudio.play();
 };
 </script>
 
