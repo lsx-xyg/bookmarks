@@ -1,5 +1,5 @@
 interface Site {
-  f: boolean;
+  f?: boolean;
   platform: string;
   url: string;
   icon?: string;
