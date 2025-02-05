@@ -26,7 +26,9 @@ const props = defineProps<Props>();
 const emit = defineEmits(['click', 'mouseenter']);
 
 // 计算初始的 iconSrc
-const iconSrc = computed(() => props.site.url + 'favicon.ico');
+const iconSrc = computed(() =>
+  props.site.f ? '' : props.site.url + 'favicon.ico'
+);
 
 // 引用 img 元素
 const siteIconImg = ref<HTMLImageElement | null>(null);

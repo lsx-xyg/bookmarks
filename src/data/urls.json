@@ -33,9 +33,10 @@
     "url": "https://www.bilibili.com/"
   },
   {
+    "f": true,
     "platform": "YouTube",
     "url": "https://www.youtube.com/",
-    "icon": "https://www.gstatic.com/youtube/img/icons/web/youtube_fill/youtube_kids_round_updated/v1/24px.svg"
+    "icon": "https://img.icons8.com/?size=100&id=19318&format=png&color=000000"
   },
   {
     "platform": "通义千问",
@@ -62,7 +63,7 @@
   },
   {
     "platform": "AntDesign",
-    "url": "https://ant.design/",
+    "url": "https://ant-design.antgroup.com/index-cn",
     "icon": "https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
   },
   {
@@ -97,17 +98,15 @@
   },
   {
     "platform": "React",
-    "url": "https://zh-hans.react.dev/learn",
-    "icon": "https://img.icons8.com/?size=100&id=123603&format=png&color=000000"
+    "url": "https://zh-hans.react.dev/"
   },
   {
-    "platform": "ReactRouter",
-    "url": "https://reactrouter.com/"
+    "platform": "ReactRouter7",
+    "url": "https://gongph.github.io/react-router7-doc/"
   },
   {
     "platform": "Redux",
-    "url": "https://redux.js.org/",
-    "icon": "https://redux.js.org/img/redux.svg"
+    "url": "https://www.redux.org.cn/"
   },
   {
     "platform": "Next",
@@ -117,5 +116,10 @@
     "platform": "Pinia",
     "url": "https://pinia.vuejs.org/zh/",
     "icon": "https://pinia.vuejs.org/logo.svg"
+  },
+  {
+    "platform": "ReactRedux",
+    "url": "https://cn.react-redux.js.org/",
+    "icon": "https://cn.react-redux.js.org/img/redux.svg"
   }
 ]
