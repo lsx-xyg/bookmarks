@@ -67,9 +67,13 @@ onMounted(() => {
   align-items: center;
   width: 100%;
   height: 64px;
-  margin-bottom: 3rem;
+  /* margin-bottom: 3rem; */
   background-color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.175);
+
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 
 .nav-item {
