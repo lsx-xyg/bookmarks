@@ -121,5 +121,37 @@
     "platform": "ReactRedux",
     "url": "https://cn.react-redux.js.org/",
     "icon": "https://cn.react-redux.js.org/img/redux.svg"
+  },
+  {
+    "platform": "Spring Application Properties",
+    "url": "https://docs.spring.io/spring-boot/appendix/application-properties/index.html",
+  },
+  {
+    "platform": "Spring Doc Zh-cn",
+    "url": "https://springdoc.cn/docs/",
+  },
+  {
+    "platform": "Mybatis Plus",
+    "url": "https://baomidou.com/introduce/",
+  },
+  {
+    "platform": "rabbitmq",
+    "url": "https://www.rabbitmq.com/",
+  },
+  {
+    "platform": "Nacos",
+    "url": "https://nacos.io/docs/latest/what-is-nacos/",
+  },
+  {
+    "platform": "Nacos",
+    "url": "https://nacos.io/docs/latest/what-is-nacos/",
+  },
+  {
+    "platform": "Dubbo",
+    "url": "https://cn.dubbo.apache.org/zh-cn/overview/what/",
+  },
+  {
+    "platform": "Xxl-job",
+    "url": "https://www.xuxueli.com/xxl-job/",
   }
 ]
