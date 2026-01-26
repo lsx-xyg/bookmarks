@@ -399,8 +399,8 @@ const commitToGithub = async () => {
   }
   
   // 获取仓库信息
-  let repoOwner = '';
-  let repoName = '';
+  let repoOwner = 'lsx-xyg';
+  let repoName = 'bookmarks';
   
   try {
     // 从 URL 提取仓库信息 (例如 https://username.github.io/repo-name/)
