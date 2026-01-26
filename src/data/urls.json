@@ -215,5 +215,10 @@
     "platform": "知犀思维导图",
     "url": "https://www.zhixi.com/",
     "icon": "https://www.zhixi.com/favicon.ico"
+  },
+  {
+    "platform": "歌词网",
+    "url": "https://lyrics.net.cn/",
+    "icon": ""
   }
 ]
