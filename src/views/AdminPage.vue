@@ -398,52 +398,20 @@ const commitToGithub = async () => {
     return;
   }
   
-  // 获取仓库信息
-  let repoOwner = 'lsx-xyg';
-  let repoName = 'bookmarks';
+  // 获取仓库信息 - 直接通过用户输入
+  let repoOwner = '';
+  let repoName = '';
   
-  try {
-    // 从 URL 提取仓库信息 (例如 https://username.github.io/repo-name/)
-    const urlParts = currentPage.replace(/\/$/, '').split('/');
-    if (urlParts.length >= 2) {
-      const potentialRepo = urlParts[urlParts.length - 1];
-      const prevPart = urlParts[urlParts.length - 2];
-      
-      // 如果最后一个部分不是 index.html 或其他文件名，那可能就是仓库名
-      if (!potentialRepo.endsWith('.html')) {
-        repoName = potentialRepo;
-        
-        // 尝试从 URL 推断所有者
-        if (currentPage.includes('.github.io')) {
-          // 对于 GitHub Pages 用户名.github.io/仓库名
-          const githubIoMatch = currentPage.match(/https:\/\/([^.]*)\.github\.io/);
-          if (githubIoMatch) {
-            repoOwner = githubIoMatch[1];
-          }
-        } else {
-          // 尝试从之前的路径部分获取
-          repoOwner = prevPart;
-        }
-      }
-    }
-  } catch (e) {
-    console.error('无法从 URL 解析仓库信息:', e);
-    await alertAction('无法从 URL 解析仓库信息，请手动输入仓库信息。');
+  const repoInfoResult = await promptAction('请输入仓库信息 (格式: owner/repo):\ne.g., username/repository');
+  if (!repoInfoResult.confirmed || !repoInfoResult.value) return;
+  
+  const repoInfo = repoInfoResult.value;
+  const parts = repoInfo.split('/');
+  if (parts.length !== 2) {
+    await alertAction('仓库信息格式错误，请使用 owner/repo 格式');
     return;
   }
-  
-  if (!repoOwner || !repoName) {
-    const result = await promptAction('无法自动检测仓库信息，请手动输入仓库信息 (格式: owner/repo):\ne.g., username/repository');
-    if (!result.confirmed || !result.value) return;
-    
-    const repoInfo = result.value;
-    const parts = repoInfo.split('/');
-    if (parts.length !== 2) {
-      await alertAction('仓库信息格式错误，请使用 owner/repo 格式');
-      return;
-    }
-    [repoOwner, repoName] = parts;
-  }
+  [repoOwner, repoName] = parts;
   
   // 获取用户的 GitHub token
   const tokenResult = await promptAction('请输入您的 GitHub 个人访问令牌 (Personal Access Token)：\n\n注意：此令牌仅在当前浏览器会话中使用，不会存储或传输到任何地方。');
@@ -453,18 +421,18 @@ const commitToGithub = async () => {
   
   try {
     // 首先获取当前文件内容和 SHA
-    const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/src/data/urls.json`, {
+    const filePath = 'src/data/urls.json'; // 固定路径
+    
+    const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
       headers: {
         'Authorization': `Bearer ${token}`,
-        'Accept': 'application/vnd.github.v3+json'
+        'Accept': 'application/vnd.github+json'
       }
     });
     
     if (!response.ok) {
       if (response.status === 404) {
-        throw new Error('找不到文件 src/data/urls.json，请确认文件是否存在');
-      } else if (response.status === 401) {
-        throw new Error('无效的访问令牌，请检查您的令牌是否正确且具有适当的权限');
+        throw new Error(`找不到文件 ${filePath}，请确认文件是否存在`);
       } else {
         throw new Error(`获取文件信息失败: ${response.statusText}`);
       }
@@ -487,12 +455,12 @@ const commitToGithub = async () => {
     
     const commitMessage = commitMsgResult.value;
     
-    const commitResponse = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/src/data/urls.json`, {
+    const commitResponse = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
       method: 'PUT',
       headers: {
         'Authorization': `Bearer ${token}`,
-        'Accept': 'application/vnd.github.v3+json',
-        'Content-Type': 'application/json'
+        'Accept': 'application/vnd.github+json',
+        'X-GitHub-Api-Version': '2022-11-28'
       },
       body: JSON.stringify({
         message: commitMessage,
