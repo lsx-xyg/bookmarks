@@ -220,5 +220,10 @@
     "platform": "歌词网",
     "url": "https://lyrics.net.cn/",
     "icon": ""
+  },
+  {
+    "platform": "clouDNS 免费域名",
+    "url": "https://www.cloudns.net/",
+    "icon": ""
   }
 ]
