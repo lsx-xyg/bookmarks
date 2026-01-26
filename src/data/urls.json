@@ -1,0 +1,215 @@
+[
+  {
+    "platform": "GitHub",
+    "url": "https://github.com/",
+    "icon": "https://img.icons8.com/?size=100&id=4Z2nCrz5iPY2&format=png&color=000000"
+  },
+  {
+    "platform": "Gitee",
+    "url": "https://gitee.com/"
+  },
+  {
+    "platform": "GitLab",
+    "url": "https://gitlab.com/"
+  },
+  {
+    "platform": "AcGit",
+    "url": "https://git.acwing.com/",
+    "icon": "https://github.githubassets.com/assets/mona-loading-default-c3c7aad1282f.gif"
+  },
+
+  {
+    "platform": "Cloudflare",
+    "url": "https://www.cloudflare.com/",
+    "icon": "https://img.icons8.com/?size=100&id=fUGx53gD9Jof&format=png&color=000000"
+  },
+  {
+    "platform": "Vercel",
+    "url": "https://vercel.com/",
+    "icon": "https://assets.vercel.com/image/upload/front/favicon/vercel/favicon.ico"
+  },
+  {
+    "platform": "Bilibili",
+    "url": "https://www.bilibili.com/"
+  },
+  {
+    "f": true,
+    "platform": "YouTube",
+    "url": "https://www.youtube.com/",
+    "icon": "https://img.icons8.com/?size=100&id=19318&format=png&color=000000"
+  },
+  {
+    "platform": "通义千问",
+    "url": "https://tongyi.aliyun.com/",
+    "icon": "https://img.alicdn.com/imgextra/i1/O1CN01asLYeX1WhbsyEZn5u_!!6000000002820-55-tps-56-56.svg"
+  },
+  {
+    "platform": "DeepSeek",
+    "url": "https://www.deepseek.com/",
+    "icon": "https://www.deepseek.com/favicon.ico"
+  },
+  {
+    "platform": "AcWing",
+    "url": "https://www.acwing.com/"
+  },
+  {
+    "platform": "Bootstrap",
+    "url": "https://getbootstrap.com/"
+  },
+  {
+    "platform": "LinuxDo",
+    "url": "https://linux.do/",
+    "icon": "https://linux.do/uploads/default/optimized/3X/9/d/9dd49731091ce8656e94433a26a3ef36062b3994_2_32x32.png"
+  },
+  {
+    "platform": "AntDesign",
+    "url": "https://ant-design.antgroup.com/index-cn",
+    "icon": "https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
+  },
+  {
+    "platform": "ElementPlus",
+    "url": "https://element-plus.org/",
+    "icon": "https://element-plus.org/images/element-plus-logo-small.svg"
+  },
+  {
+    "platform": "VueAntDesign",
+    "url": "https://www.antdv.com/",
+    "icon": "https://next.antdv.com/assets/logo.1ef800a8.svg"
+  },
+  {
+    "platform": "Vue3",
+    "url": "https://cn.vuejs.org/",
+    "icon": "https://cn.vuejs.org/logo.svg"
+  },
+  {
+    "platform": "VueRouter",
+    "url": "https://router.vuejs.org/zh/",
+    "icon": "https://router.vuejs.org/logo.svg"
+  },
+  {
+    "platform": "Vuex",
+    "url": "https://vuex.vuejs.org/zh/",
+    "icon": "https://vuex.vuejs.org/logo.png"
+  },
+  {
+    "platform": "Nuxt",
+    "url": "https://nuxt.com/",
+    "icon": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32'%3E%3Cpath fill='%2300DC82' d='M17.708 25h10.409c.33 0 .655-.088.942-.254a1.9 1.9 0 0 0 .689-.696a1.91 1.91 0 0 0 0-1.9L22.756 9.936a1.87 1.87 0 0 0-3.261 0l-1.788 3.125l-3.494-6.111a1.871 1.871 0 0 0-3.262 0l-8.7 15.2a1.91 1.91 0 0 0 .69 2.595c.286.167.61.255.941.255h6.534c2.589 0 4.498-1.147 5.811-3.385l3.19-5.572l1.708-2.982l5.127 8.957h-6.835zm-7.398-2.985l-4.56-.001l6.836-11.942l3.41 5.97l-2.283 3.992c-.873 1.452-1.864 1.981-3.403 1.981'/%3E%3C/svg%3E"
+  },
+  {
+    "platform": "React",
+    "url": "https://zh-hans.react.dev/"
+  },
+  {
+    "platform": "ReactRouter7",
+    "url": "https://gongph.github.io/react-router7-doc/"
+  },
+  {
+    "platform": "Redux",
+    "url": "https://www.redux.org.cn/"
+  },
+  {
+    "platform": "Next",
+    "url": "https://nextjs.org/"
+  },
+  {
+    "platform": "Pinia",
+    "url": "https://pinia.vuejs.org/zh/",
+    "icon": "https://pinia.vuejs.org/logo.svg"
+  },
+  {
+    "platform": "ReactRedux",
+    "url": "https://cn.react-redux.js.org/",
+    "icon": "https://cn.react-redux.js.org/img/redux.svg"
+  },
+  {
+    "platform": "Spring Application Properties",
+    "url": "https://docs.spring.io/spring-boot/appendix/application-properties/index.html",
+    "icon": "https://docs.spring.io/spring-boot/_/img/favicon.ico"
+  },
+  {
+    "platform": "Spring Doc Zh-cn",
+    "url": "https://springdoc.cn/docs/",
+    "icon": "https://springdoc.cn/favicon.ico"
+  },
+  {
+    "platform": "Mybatis Plus",
+    "url": "https://baomidou.com/introduce/",
+    "icon": "https://baomidou.com/favicon.svg"
+  },
+  {
+    "platform": "rabbitmq",
+    "url": "https://www.rabbitmq.com/",
+    "icon": "https://www.rabbitmq.com/img/rabbitmq-logo.svg"
+  },
+  {
+    "platform": "Nacos",
+    "url": "https://nacos.io/docs/latest/what-is-nacos/",
+    "icon": "https://nacos.io/favicon.ico"
+  },
+  {
+    "platform": "Dubbo",
+    "url": "https://cn.dubbo.apache.org/zh-cn/overview/what/",
+    "icon": "https://cn.dubbo.apache.org/imgs/favicon.png"
+  },
+  {
+    "platform": "Xxl-job",
+    "url": "https://www.xuxueli.com/xxl-job/",
+    "icon": "https://www.xuxueli.com/favicon.ico"
+  },
+  {
+    "platform": "R-Nacos",
+    "url": "https://r-nacos.github.io/docs/",
+    "icon": "https://r-nacos.github.io/docs/logo.svg"
+  },
+  {
+    "platform": "RustFS",
+    "url": "https://rustfs.com.cn/",
+    "icon": "https://rustfs.com.cn/favicon-32x32.png"
+  },
+  {
+    "platform": "硅基流动",
+    "url": "https://cloud.siliconflow.cn/me/models",
+    "icon": "https://cloud.siliconflow.cn/favicon.ico"
+  },
+  {
+    "platform": "百度千帆",
+    "url": "https://console.bce.baidu.com/qianfan/overview",
+    "icon": "https://bce.bdstatic.com/img/favicon.ico"
+  },
+  {
+    "platform": "阿里百炼",
+    "url": "https://bailian.console.aliyun.com/",
+    "icon": "https://img.alicdn.com/imgextra/i4/O1CN01Of5nxM1Xgz4PhVWS5_!!6000000002954-55-tps-24-24.svg"
+  },
+  {
+    "platform": "智谱",
+    "url": "https://www.bigmodel.cn/",
+    "icon": "https://www.bigmodel.cn/img/icons/favicon-32x32.png"
+  },
+  {
+    "platform": "OpenRouter",
+    "url": "https://openrouter.ai/",
+    "icon": "https://openrouter.ai/favicon.ico"
+  },
+  {
+    "platform": "DeepSeek开放平台",
+    "url": "https://platform.deepseek.com/",
+    "icon": "https://platform.deepseek.com/favicon.svg"
+  },
+  {
+    "platform": "语雀",
+    "url": "https://www.yuque.com/",
+    "icon": "https://mdn.alipayobjects.com/huamei_0prmtq/afts/img/A*sHlLTI41kIoAAAAAAAAAAAAADvuFAQ/original"
+  },
+  {
+    "platform": "知犀流程图",
+    "url": "https://draw.zhixi.com/",
+    "icon": "https://draw.zhixi.com/favicon.ico"
+  },
+  {
+    "platform": "知犀思维导图",
+    "url": "https://www.zhixi.com/",
+    "icon": "https://www.zhixi.com/favicon.ico"
+  }
+]
