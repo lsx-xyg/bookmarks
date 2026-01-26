@@ -5,6 +5,11 @@
     "icon": "https://img.icons8.com/?size=100&id=4Z2nCrz5iPY2&format=png&color=000000"
   },
   {
+    "platform": "Github文档",
+    "url": "https://docs.github.com/zh",
+    "icon": "https://docs.github.com/assets/cb-345/images/site/favicon.png"
+  },
+  {
     "platform": "Gitee",
     "url": "https://gitee.com/"
   },
@@ -210,10 +215,5 @@
     "platform": "知犀思维导图",
     "url": "https://www.zhixi.com/",
     "icon": "https://www.zhixi.com/favicon.ico"
-  },
-  {
-    "platform": "Github文档",
-    "url": "https://docs.github.com/zh",
-    "icon": ""
   }
 ]
