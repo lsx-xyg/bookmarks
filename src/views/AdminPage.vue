@@ -426,7 +426,8 @@ const commitToGithub = async () => {
     const response = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
       headers: {
         'Authorization': `Bearer ${token}`,
-        'Accept': 'application/vnd.github+json'
+        'Accept': 'application/vnd.github+json',
+        'X-GitHub-Api-Version': '2022-11-28'
       }
     });
     
@@ -440,7 +441,14 @@ const commitToGithub = async () => {
     
     const fileData = await response.json();
     const sha = fileData.sha;
-    const currentContent = atob(fileData.content); // base64 解码
+    // 正确处理Unicode字符的base64解码
+    const decodeBase64 = (str) => {
+      // 解码base64后再进行UTF-8解码
+      return decodeURIComponent(atob(str).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+      }).join(''));
+    };
+    const currentContent = decodeBase64(fileData.content); // base64 解码
     
     // 检查内容是否有变化
     const newContent = JSON.stringify(sites.value, null, 2);
@@ -455,6 +463,14 @@ const commitToGithub = async () => {
     
     const commitMessage = commitMsgResult.value;
     
+    // 正确处理Unicode字符的base64编码
+    const encodeBase64 = (str) => {
+      // 先将字符串转换为UTF-8字节数组，再进行base64编码
+      return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function(match, p1) {
+        return String.fromCharCode(parseInt(p1, 16));
+      }));
+    };
+    
     const commitResponse = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
       method: 'PUT',
       headers: {
@@ -464,7 +480,7 @@ const commitToGithub = async () => {
       },
       body: JSON.stringify({
         message: commitMessage,
-        content: btoa(newContent), // base64 编码
+        content: encodeBase64(newContent), // 正确编码包含Unicode字符的内容
         sha: sha
       })
     });
