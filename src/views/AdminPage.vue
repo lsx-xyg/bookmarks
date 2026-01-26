@@ -24,8 +24,18 @@
         <button @click="saveChanges" class="btn btn-success">保存更改</button>
         <button @click="cancelChanges" class="btn btn-secondary">取消</button>
         <button @click="exportData" class="btn btn-info">导出JSON</button>
+        <button @click="loadConfigFromFile" class="btn btn-info">从文件加载配置</button>
         <button @click="commitToGithub" class="btn btn-github">提交到 GitHub</button>
       </div>
+      
+      <!-- 隐藏的文件输入元素 -->
+      <input 
+        type="file" 
+        ref="configFileInput" 
+        @change="handleConfigFileUpload" 
+        accept=".txt,.json,.config" 
+        style="display: none"
+      />
     </div>
     
     <div class="sites-container-full">
@@ -163,6 +173,14 @@ const modalType = ref<'confirm' | 'prompt' | 'alert'>('confirm');
 const modalCallback = ref<Function | null>(null);
 const modalInputValue = ref('');
 
+// 配置文件相关
+const configFileInput = ref<HTMLInputElement | null>(null);
+const configFromFile = ref({
+  repoOwner: '',
+  repoName: '',
+  token: ''
+});
+
 // 初始化数据
 const init = () => {
   // 深拷贝原始数据以避免直接修改导入的数据
@@ -292,6 +310,75 @@ const closeModal = () => {
   modalInputValue.value = '';
 };
 
+// 从文件加载配置
+const loadConfigFromFile = () => {
+  if (configFileInput.value) {
+    configFileInput.value.click();
+  }
+};
+
+// 处理配置文件上传
+const handleConfigFileUpload = async (event: Event) => {
+  const target = event.target as HTMLInputElement;
+  const file = target.files?.[0];
+  if (!file) return;
+
+  try {
+    const content = await readFileContent(file);
+    parseConfigFile(content);
+    showMessageFunc('配置文件加载成功！', 'success');
+  } catch (error) {
+    console.error('读取配置文件失败:', error);
+    showMessageFunc('读取配置文件失败: ' + (error as Error).message, 'error');
+  }
+};
+
+// 读取文件内容
+const readFileContent = (file: File): Promise<string> => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const content = e.target?.result as string;
+      resolve(content);
+    };
+    reader.onerror = () => {
+      reject(new Error('无法读取文件'));
+    };
+    reader.readAsText(file, 'UTF-8');
+  });
+};
+
+// 解析配置文件内容
+const parseConfigFile = (content: string) => {
+  // 按行分割内容
+  const lines = content.split(/\r?\n/).filter(line => line.trim() !== '');
+  
+  if (lines.length >= 3) {
+    // 假设第一行是 repoOwner, 第二行是 repoName, 第三行是 token
+    configFromFile.value.repoOwner = lines[0].trim();
+    configFromFile.value.repoName = lines[1].trim();
+    configFromFile.value.token = lines[2].trim();
+  } else {
+    // 如果只有两行，可能是 owner/repo 格式在第一行，token 在第二行
+    if (lines.length >= 2) {
+      const ownerRepo = lines[0].trim().split('/');
+      if (ownerRepo.length >= 2) {
+        configFromFile.value.repoOwner = ownerRepo[0];
+        configFromFile.value.repoName = ownerRepo.slice(1).join('/'); // 处理 repo 名称中包含斜杠的情况
+      }
+      configFromFile.value.token = lines[1].trim();
+    } else if (lines.length === 1) {
+      // 如果只有一行，尝试解析为 owner/repo/token 格式
+      const parts = lines[0].trim().split('/');
+      if (parts.length >= 3) {
+        configFromFile.value.repoOwner = parts[0];
+        configFromFile.value.repoName = parts[1];
+        configFromFile.value.token = parts.slice(2).join('/'); // token 可能包含斜杠
+      }
+    }
+  }
+};
+
 // 替代 confirm 的函数
 const confirmAction = (msg: string): Promise<boolean> => {
   return new Promise((resolve) => {
@@ -398,26 +485,57 @@ const commitToGithub = async () => {
     return;
   }
   
-  // 获取仓库信息 - 直接通过用户输入
   let repoOwner = '';
   let repoName = '';
+  let token = '';
   
-  const repoInfoResult = await promptAction('请输入仓库信息 (格式: owner/repo):\ne.g., username/repository');
-  if (!repoInfoResult.confirmed || !repoInfoResult.value) return;
-  
-  const repoInfo = repoInfoResult.value;
-  const parts = repoInfo.split('/');
-  if (parts.length !== 2) {
-    await alertAction('仓库信息格式错误，请使用 owner/repo 格式');
-    return;
+  // 检查是否已经从文件加载了配置
+  if (configFromFile.value.repoOwner && configFromFile.value.repoName && configFromFile.value.token) {
+    repoOwner = configFromFile.value.repoOwner;
+    repoName = configFromFile.value.repoName;
+    token = configFromFile.value.token;
+    
+    // 确认是否使用从文件加载的配置
+    const useLoadedConfig = await confirmAction(
+      `是否使用从文件加载的配置?\n\n仓库: ${repoOwner}/${repoName}\nToken: ${configFromFile.value.token.substring(0, 4)}********`
+    );
+    
+    if (!useLoadedConfig) {
+      // 如果用户选择不使用加载的配置，则重新输入
+      const repoInfoResult = await promptAction('请输入仓库信息 (格式: owner/repo):\ne.g., username/repository');
+      if (!repoInfoResult.confirmed || !repoInfoResult.value) return;
+      
+      const repoInfo = repoInfoResult.value;
+      const parts = repoInfo.split('/');
+      if (parts.length !== 2) {
+        await alertAction('仓库信息格式错误，请使用 owner/repo 格式');
+        return;
+      }
+      [repoOwner, repoName] = parts;
+      
+      const tokenResult = await promptAction('请输入您的 GitHub 个人访问令牌 (Personal Access Token)：\n\n注意：此令牌仅在当前浏览器会话中使用，不会存储或传输到任何地方。');
+      if (!tokenResult.confirmed || !tokenResult.value) return;
+      
+      token = tokenResult.value;
+    }
+  } else {
+    // 如果没有从文件加载配置，则通过用户输入获取
+    const repoInfoResult = await promptAction('请输入仓库信息 (格式: owner/repo):\ne.g., username/repository');
+    if (!repoInfoResult.confirmed || !repoInfoResult.value) return;
+    
+    const repoInfo = repoInfoResult.value;
+    const parts = repoInfo.split('/');
+    if (parts.length !== 2) {
+      await alertAction('仓库信息格式错误，请使用 owner/repo 格式');
+      return;
+    }
+    [repoOwner, repoName] = parts;
+    
+    const tokenResult = await promptAction('请输入您的 GitHub 个人访问令牌 (Personal Access Token)：\n\n注意：此令牌仅在当前浏览器会话中使用，不会存储或传输到任何地方。');
+    if (!tokenResult.confirmed || !tokenResult.value) return;
+    
+    token = tokenResult.value;
   }
-  [repoOwner, repoName] = parts;
-  
-  // 获取用户的 GitHub token
-  const tokenResult = await promptAction('请输入您的 GitHub 个人访问令牌 (Personal Access Token)：\n\n注意：此令牌仅在当前浏览器会话中使用，不会存储或传输到任何地方。');
-  if (!tokenResult.confirmed || !tokenResult.value) return;
-  
-  const token = tokenResult.value;
   
   try {
     // 首先获取当前文件内容和 SHA
