@@ -225,5 +225,10 @@
     "platform": "clouDNS 免费域名",
     "url": "https://www.cloudns.net/",
     "icon": ""
+  },
+  {
+    "platform": "Docker 文档",
+    "url": "https://docs.docker.com/",
+    "icon": ""
   }
 ]
