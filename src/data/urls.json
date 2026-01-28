@@ -250,5 +250,10 @@
     "platform": "Spring 中文",
     "url": "https://docs.springframework.org.cn/",
     "icon": ""
+  },
+  {
+    "platform": "Rust",
+    "url": "https://rust-lang.org/zh-CN/learn/get-started/",
+    "icon": ""
   }
 ]
