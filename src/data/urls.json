@@ -230,5 +230,15 @@
     "platform": "Docker 文档",
     "url": "https://docs.docker.com/",
     "icon": ""
+  },
+  {
+    "platform": "Docker 中文文档（1）",
+    "url": "https://docker.it-docs.cn/",
+    "icon": "https://docker.it-docs.cn/static/docs@2x.ico"
+  },
+  {
+    "platform": "Docker 中文文档（2）",
+    "url": "https://docker.cadn.net.cn/",
+    "icon": "https://docker.cadn.net.cn/static/docs@2x.ico"
   }
 ]
