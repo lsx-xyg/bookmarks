@@ -240,5 +240,15 @@
     "platform": "Docker 中文文档（2）",
     "url": "https://docker.cadn.net.cn/",
     "icon": "https://docker.cadn.net.cn/static/docs@2x.ico"
+  },
+  {
+    "platform": "Spring 官网",
+    "url": "https://docs.spring.io/",
+    "icon": ""
+  },
+  {
+    "platform": "Spring 中文",
+    "url": "https://docs.springframework.org.cn/",
+    "icon": ""
   }
 ]
