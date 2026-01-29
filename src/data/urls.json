@@ -61,6 +61,11 @@
     "url": "https://getbootstrap.com/"
   },
   {
+    "platform": "maven",
+    "url": "https://maven.apache.org/",
+    "icon": ""
+  },
+  {
     "platform": "LinuxDo",
     "url": "https://linux.do/",
     "icon": "https://linux.do/uploads/default/optimized/3X/9/d/9dd49731091ce8656e94433a26a3ef36062b3994_2_32x32.png"
@@ -274,11 +279,6 @@
   {
     "platform": "Docker-maven-plugin 文档",
     "url": "https://dmp.fabric8.io/",
-    "icon": ""
-  },
-  {
-    "platform": "maven",
-    "url": "https://maven.apache.org/",
     "icon": ""
   }
 ]
