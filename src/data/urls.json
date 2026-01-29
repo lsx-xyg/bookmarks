@@ -255,5 +255,10 @@
     "platform": "Rust",
     "url": "https://rust-lang.org/zh-CN/learn/get-started/",
     "icon": ""
+  },
+  {
+    "platform": "Podman Desktop 文档",
+    "url": "https://podman-desktop.io/docs",
+    "icon": ""
   }
 ]
