@@ -270,5 +270,10 @@
     "platform": "Caddy 中文文档",
     "url": "https://caddyserver.com.cn/docs/",
     "icon": ""
+  },
+  {
+    "platform": "Docker-maven-plugin 文档",
+    "url": "https://dmp.fabric8.io/",
+    "icon": ""
   }
 ]
