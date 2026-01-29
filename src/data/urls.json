@@ -260,5 +260,15 @@
     "platform": "Podman Desktop 文档",
     "url": "https://podman-desktop.io/docs",
     "icon": ""
+  },
+  {
+    "platform": "Caddy 文档",
+    "url": "https://caddyserver.com/docs/",
+    "icon": ""
+  },
+  {
+    "platform": "Caddy 中文文档",
+    "url": "https://caddyserver.com.cn/docs/",
+    "icon": ""
   }
 ]
