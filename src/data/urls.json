@@ -275,5 +275,10 @@
     "platform": "Docker-maven-plugin 文档",
     "url": "https://dmp.fabric8.io/",
     "icon": ""
+  },
+  {
+    "platform": "maven",
+    "url": "https://maven.apache.org/",
+    "icon": ""
   }
 ]
