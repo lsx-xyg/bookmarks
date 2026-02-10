@@ -249,32 +249,32 @@
   {
     "platform": "Spring 官网",
     "url": "https://docs.spring.io/",
-    "icon": ""
+    "icon": "https://spring.io/favicon.svg"
   },
   {
     "platform": "Spring 中文",
     "url": "https://docs.springframework.org.cn/",
-    "icon": ""
+    "icon": "https://docs.springframework.org.cn/spring-framework/reference/_/img/spring-logo.svg"
   },
   {
     "platform": "Rust",
     "url": "https://rust-lang.org/zh-CN/learn/get-started/",
-    "icon": ""
+    "icon": "https://rust-lang.org/static/images/rust-logo-blk.svg"
   },
   {
     "platform": "Podman Desktop 文档",
     "url": "https://podman-desktop.io/docs",
-    "icon": ""
+    "icon": "https://podman-desktop.io/img/logo.svg"
   },
   {
     "platform": "Caddy 文档",
     "url": "https://caddyserver.com/docs/",
-    "icon": ""
+    "icon": "https://caddyserver.com/resources/images/logo-light.svg"
   },
   {
     "platform": "Caddy 中文文档",
     "url": "https://caddyserver.com.cn/docs/",
-    "icon": ""
+    "icon": "https://caddyserver.com.cn/old/resources/images/caddy-logo.svg"
   },
   {
     "platform": "Docker-maven-plugin 文档",
@@ -284,6 +284,6 @@
   {
     "platform": "Fesod 文档 (FastExcel)",
     "url": "https://fesod.apache.org/zh-cn/docs/",
-    "icon": ""
+    "icon": "https://fesod.apache.org/zh-cn/img/logo/fesod-logo.svg"
   }
 ]
