@@ -280,5 +280,10 @@
     "platform": "Docker-maven-plugin 文档",
     "url": "https://dmp.fabric8.io/",
     "icon": ""
+  },
+  {
+    "platform": "Fesod 文档 (FastExcel)",
+    "url": "https://fesod.apache.org/zh-cn/docs/",
+    "icon": ""
   }
 ]
