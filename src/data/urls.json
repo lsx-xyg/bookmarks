@@ -285,5 +285,10 @@
     "platform": "Fesod 文档 (FastExcel)",
     "url": "https://fesod.apache.org/zh-cn/docs/",
     "icon": "https://fesod.apache.org/zh-cn/img/logo/fesod-logo.svg"
+  },
+  {
+    "platform": "Tarui（Rust 后端框架 + 主流前端）",
+    "url": "https://tauri.app/zh-cn/start/",
+    "icon": ""
   }
 ]
